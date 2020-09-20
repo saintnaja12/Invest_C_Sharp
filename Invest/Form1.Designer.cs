@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_money = new System.Windows.Forms.TextBox();
             this.btn_sch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_month = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lb_out = new System.Windows.Forms.ListBox();
+            this.ctMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_money
@@ -91,12 +96,42 @@
             // 
             // lb_out
             // 
+            this.lb_out.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_out.ContextMenuStrip = this.ctMenuStrip;
             this.lb_out.FormattingEnabled = true;
+            this.lb_out.HorizontalScrollbar = true;
             this.lb_out.ItemHeight = 16;
-            this.lb_out.Location = new System.Drawing.Point(515, 12);
+            this.lb_out.Location = new System.Drawing.Point(12, 12);
             this.lb_out.Name = "lb_out";
-            this.lb_out.Size = new System.Drawing.Size(561, 388);
+            this.lb_out.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.lb_out.Size = new System.Drawing.Size(1064, 388);
             this.lb_out.TabIndex = 6;
+            this.lb_out.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lb_out_KeyPress);
+            // 
+            // ctMenuStrip
+            // 
+            this.ctMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ctMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctCopy,
+            this.ctSelectAll});
+            this.ctMenuStrip.Name = "ctMenuStrip";
+            this.ctMenuStrip.Size = new System.Drawing.Size(211, 80);
+            // 
+            // ctCopy
+            // 
+            this.ctCopy.Name = "ctCopy";
+            this.ctCopy.Size = new System.Drawing.Size(210, 24);
+            this.ctCopy.Text = "Copy to clipboard";
+            this.ctCopy.Click += new System.EventHandler(this.ctCopy_Click);
+            // 
+            // ctSelectAll
+            // 
+            this.ctSelectAll.Name = "ctSelectAll";
+            this.ctSelectAll.Size = new System.Drawing.Size(210, 24);
+            this.ctSelectAll.Text = "Select All Rows";
+            this.ctSelectAll.Click += new System.EventHandler(this.ctSelectAll_Click);
             // 
             // Form1
             // 
@@ -111,6 +146,7 @@
             this.Controls.Add(this.txt_money);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.ctMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +160,9 @@
         private System.Windows.Forms.TextBox txt_month;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lb_out;
+        private System.Windows.Forms.ContextMenuStrip ctMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem ctCopy;
+        private System.Windows.Forms.ToolStripMenuItem ctSelectAll;
     }
 }
 

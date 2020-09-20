@@ -41,7 +41,14 @@ namespace Invest
 
             if(checkerr == 0)
             {
-                txtOutput.Text = "";
+                DateTime starttime = System.DateTime.Now;
+
+                //txtOutput.Text = "";
+                lb_out.BeginUpdate();
+                lb_out.Items.Clear();
+
+                List<string> listOut = new List<string>();
+
                 strOutput = "";
 
                 //for (year = 1; year <= 100; year++)
@@ -52,6 +59,7 @@ namespace Invest
                 year = 1;
                 while (year <= 10)
                 {
+                    strOutput = "";
                     profit_per = 5;
                     countArr = 0;
                     while (profit_per <= 50)
@@ -78,8 +86,17 @@ namespace Invest
                     strOutput += "\r\n";
 
                     year++;
+
+                    lb_out.Items.Add(strOutput);
+                    //listOut.Add(strOutput);
                 }
-                txtOutput.Text = strOutput;
+                //txtOutput.Text = strOutput;
+                //lb_out.DataSource = listOut;
+                lb_out.EndUpdate();
+
+                DateTime endtime = System.DateTime.Now;
+                System.TimeSpan usedtime = endtime - starttime;
+                //MessageBox.Show("Used time = " + usedtime.TotalSeconds.ToString() + " sec.");
             }
         }
 
@@ -144,6 +161,58 @@ namespace Invest
             {
                 txt_month.Text = "";
             }
+        }
+
+        private void lb_out_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 3) //Ctrl + C
+            {
+                copyclick();
+            }
+            else if(e.KeyChar == 1) //Ctrl + A
+            {
+                selectallrow();
+            }
+        }
+
+        private void copyclick()
+        {
+            //String copytext = ""
+            StringBuilder copytext = new StringBuilder("");
+
+            foreach(object datarow in lb_out.SelectedItems)
+            {
+                copytext.Append(datarow.ToString());
+                //copytext.Append("\r\n"); ใช้ Lenhth-2
+                copytext.AppendLine();
+            }
+            copytext.Remove(copytext.Length-1, 1);
+            Clipboard.SetText(copytext.ToString());
+        }
+
+        private void selectallrow()
+        {
+            lb_out.BeginUpdate();
+            for(int i = 0; i < lb_out.Items.Count; i++)
+            {
+                lb_out.SetSelected(i, true);
+            }
+            lb_out.EndUpdate();
+            /*int i = 0;
+            while(i < lb_out.Items.Count)
+            {
+                i++;
+            }*/
+        }
+
+        private void ctCopy_Click(object sender, EventArgs e)
+        {
+            copyclick();
+        }
+
+        private void ctSelectAll_Click(object sender, EventArgs e)
+        {
+            selectallrow();
         }
     }
 }
