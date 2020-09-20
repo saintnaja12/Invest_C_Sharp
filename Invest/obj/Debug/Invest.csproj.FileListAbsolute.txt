@@ -1,0 +1,10 @@
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\bin\Debug\Invest.exe.config
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\bin\Debug\Invest.exe
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\bin\Debug\Invest.pdb
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\obj\Debug\Invest.csprojAssemblyReference.cache
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\obj\Debug\Invest.Form1.resources
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\obj\Debug\Invest.Properties.Resources.resources
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\obj\Debug\Invest.csproj.GenerateResource.cache
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\obj\Debug\Invest.csproj.CoreCompileInputs.cache
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\obj\Debug\Invest.exe
+C:\Users\KTULU\source\repos\Project\Invest\Invest\Invest\obj\Debug\Invest.pdb
